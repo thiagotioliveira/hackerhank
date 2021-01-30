@@ -1,5 +1,7 @@
 package com.thiagoti.hackerrank;
 
+import java.util.Scanner;
+
 public class Solution {
 
   public static final String WEIRD = "Weird";
@@ -7,20 +9,24 @@ public class Solution {
   public static final String NOT_WEIRD = "Not Weird";
 
   public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-    Integer value = Integer.valueOf(args[0]);
+    final int N = scanner.nextInt();
 
-    if (value < 1 || value > 100) {
+    scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+    scanner.close();
+
+    if (N < 1 || N > 100) {
       throw new RuntimeException();
     }
 
-    if (value % 2 != 0) {
+    if (N % 2 != 0) {
       System.out.print(WEIRD);
-    } else if (value >= 2 && value <= 5) {
+    } else if (N >= 2 && N <= 5) {
       System.out.print(NOT_WEIRD);
-    } else if (value >= 6 && value <= 20) {
+    } else if (N >= 6 && N <= 20) {
       System.out.print(WEIRD);
-    } else if (value >= 20) {
+    } else if (N >= 20) {
       System.out.print(NOT_WEIRD);
     }
 
